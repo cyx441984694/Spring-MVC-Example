@@ -5,7 +5,7 @@
 Spring MVC 是一种基于Model-View-Controller(MVC) 模式的应用于开发网页应用的java框架。</br>
 MVC框架主要是围绕`DispatcherServlet`发送请求给处理器而设计的，具有可配置的处理程序映射、视图解析、区域设置和主题解析以及对上传文件的支持。</br>
 分别以MVC字母解析：</br>
-M: 模型（MVC 中的 M）是一个Map接口，它允许视图完全抽象化。该模型Map 就是简单地转化成合适的格式，比如JSP请求属性或者Velocity模板模型。你可以直接与基于模板的渲染技术（例如 JSP、Velocity 和 Freemarker）集成，或者直接生成 XML、JSON、Atom 和许多其他类型的内容。
+M: 模型（MVC 中的 M）是一个Map接口，它允许视图完全抽象化。该模型Map 就是简单地转化成合适的格式，比如JSP请求属性或者Velocity模板模型。你可以直接与基于模板的渲染技术（例如 JSP、Velocity 和 Freemarker）集成，或者直接生成 XML、JSON、Atom 和许多其他类型的内容。</br>
 V: 视图名的解析配置方法非常多样化， 可以通过文件扩展名或header内容类型协商，可以通过 bean 名称、属性文件甚至自定义ViewResolver实现。</br>
 C: 默认处理程序基于`@Controller`和 `@RequestMapping`注释，提供了广泛的灵活处理方法。`Controller`通常负责准备带有数据的`Map`模型并选择视图名称，但它也可以直接写入响应流并完成请求。</br>
 
