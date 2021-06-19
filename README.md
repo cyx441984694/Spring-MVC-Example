@@ -107,11 +107,13 @@ ViewResolver: 根据用户请求的ViewName创建合适的模板引擎来渲染�
 ![image](https://user-images.githubusercontent.com/37991693/122644878-01a04d80-d14a-11eb-945b-5e6c44ae77cb.png) </br>
 ![image](https://user-images.githubusercontent.com/37991693/122644884-0bc24c00-d14a-11eb-8be3-8ce7b4e5b259.png) </br>
 运行后将会自动打开 http://localhost:8080/serving_web_content_war/  </br>
+
 ![image](https://user-images.githubusercontent.com/37991693/122647608-7b8b0380-d157-11eb-8173-c9fe487787d2.png) </br>
+
 输入用户名点击确认就可以看到"Hello $username”。
 
+
 ## 参考:
---------------------------------------------------
 * https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
 * https://www.upgrad.com/blog/spring-mvc-flow-diagram/
 * https://www.journaldev.com/14476/spring-mvc-example
