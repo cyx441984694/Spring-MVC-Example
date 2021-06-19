@@ -30,23 +30,25 @@ Source: [Terasoluna Global Framework](https://terasolunaorg.github.io/guideline/
 ![image](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/images/mvc.png）
 DispatcherServlet其实相当于Servlet, 关于Servlet另外开一篇，一般可以结合这两个一起来理解
 ```
-<web-app>
-
     <servlet>
-        <servlet-name>example</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <servlet-name>spring</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>WEB-INF/spring-servlet.xml</param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>example</servlet-name>
-        <url-pattern>/example/*</url-pattern>
+        <servlet-name>spring</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
-
-</web-app>
 ```
 
-DispatcherServlet在初始化時，Spring MVC就會在WEB-INF目录下寻找文件名[servlet-name]-servlet.xml的文件，根据文件中的beans 在`initStrategies`中初始化自身的beans(第二点），并覆盖所有全局范围定义的同样名字的beans。
+DispatcherServlet在初始化時，Spring MVC就會在WEB-INF目录下寻找文件名[servlet-name]-servlet.xml的文件(此例是spring-servlet.xml)，根据文件中的beans 在`initStrategies`中初始化自身的beans(第二点），并覆盖所有全局范围定义的同样名字的beans。
 WebApplicationContexts是ApplicationContext的拓展，通过与ServletContext的连接，他将会知道与Servlet是相关的。
 
 ![image](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/images/mvc-contexts.gif)
@@ -106,20 +108,15 @@ ViewResolver: 根据用户请求的ViewName创建合适的模板引擎来渲染�
 
 ## 例子
 * 直接运行方式
-```
-git clone ....
-./mvnw spring-boot:run
-```
-* 从0开始
-直接点击 [Spring initial](https://spring.io/guides/gs/serving-web-content/#scratch)然后下载相应的zip。
-解压后就可以按照例子来配置controller与greeting.html
 
-* 测试
-打开网页输入 `http://localhost:8080/greeting?name=User`
-或者打开 `http://localhost:8080`
+![image](https://user-images.githubusercontent.com/37991693/122644878-01a04d80-d14a-11eb-945b-5e6c44ae77cb.png)
+![image](https://user-images.githubusercontent.com/37991693/122644884-0bc24c00-d14a-11eb-8be3-8ce7b4e5b259.png)
+运行后将会自动打开 http://localhost:8080/serving_web_content_war/
+
 
 ## 参考:
 --------------------------------------------------
 * https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
 * https://www.upgrad.com/blog/spring-mvc-flow-diagram/
-* https://github.com/fangjian0423/springmvc-source-minibook
+* https://www.journaldev.com/14476/spring-mvc-example
+* 《深入分析Java Web技术内幕》 许令波
