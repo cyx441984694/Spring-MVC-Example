@@ -102,7 +102,19 @@ ViewResolver: 根据用户请求的ViewName创建合适的模板引擎来渲染�
 
 
 ## 例子
-* 直接运行方式
+目录结构:
+```
+** src/main/com/example/servingwebcontent
+** Webcontent/WEB-INF
+***     views
+****        home.jsp
+****        user.jsp
+***     spsring-servlet.xml
+***     web.xml
+** pom.xml
+```
+mvn install 就可以得到target folder下的war文件， 再"Edit configuration" 添加Tomcat启动器。</br>
+启动器设置如下：
 
 ![image](https://user-images.githubusercontent.com/37991693/122644878-01a04d80-d14a-11eb-945b-5e6c44ae77cb.png) </br>
 ![image](https://user-images.githubusercontent.com/37991693/122644884-0bc24c00-d14a-11eb-8be3-8ce7b4e5b259.png) </br>
@@ -111,6 +123,16 @@ ViewResolver: 根据用户请求的ViewName创建合适的模板引擎来渲染�
 ![image](https://user-images.githubusercontent.com/37991693/122647608-7b8b0380-d157-11eb-8173-c9fe487787d2.png) </br>
 
 输入用户名点击确认就可以看到"Hello $username”。
+
+## 坑点
+踩过的一些点:
+* 找不到servlet文件
+
+首先要确认现在你的根目录是哪里 - Project structure - Web resource directory
+我的目录是: E:\JAVA\springmvc\serving-web-content\serving-web-content\WebContent。所以在web.xml与spring-servlet.xml目录都是/WEB-INF/xxx/
+* 找不到jsp
+
+spring-servlet.xml中的property注意是这个`value="WEB-INF/views/`。views文件夹后添加`/`。 
 
 
 ## 参考:
