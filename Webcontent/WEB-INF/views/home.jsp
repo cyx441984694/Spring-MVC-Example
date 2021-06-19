@@ -9,11 +9,14 @@
 <body>
 <h1>Hello world!</h1>
 
-<P>The time on the server is ${serverTime}.</p>
+<P>现在时间是: ${serverTime}.</p><br>
 
 <form action="user" method="post">
-    <input type="text" name="userName"><br> <input
-        type="submit" value="Login">
+    <tr>
+        <td>请输入用户名：</td>
+    <input type="text" name="userName"><br><br>
+    <input type="submit" value="Login">
+    </tr>
 </form>
 </body>
 </html>
